@@ -1,0 +1,40 @@
+name: Extract answers
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '*.msg'
+      - 'scripts/extract_answers.py'
+      - 'requirements.txt'
+      - '.github/workflows/extract-answers.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate answers CSV
+        run: python scripts/extract_answers.py
+
+      - name: Commit updated answers.csv
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: chore: aktualizace answers.csv
+          file_pattern: answers.csv
