@@ -16,24 +16,13 @@ import extract_msg
 
 NUMBER_PATTERN = re.compile(r"[-+]?\d{1,3}(?:[ .\u00A0]\d{3})*(?:[.,]\d+)?|\d+(?:[.,]\d+)?")
 EMAIL_PATTERN = re.compile(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+")
+ENCODING_FALLBACKS = (None, "cp1250")
+MISSING_DATE_SORT_KEY = "99.99"
 
 
 # Kontrola názvu souboru, zda jde o odpověď účastníka.
 def is_participant_reply(file_name: str) -> bool:
-    lowered = file_name.lower()
-    if not lowered.startswith("re_"):
-        return False
-
-    excluded_prefixes = (
-        "automatická odpověď_",
-        "sestava odvolání zprávy",
-        "fw_",
-        "denní přehled reakce",
-        "qod ",
-        "qod_",
-        "qotd",
-    )
-    return not lowered.startswith(excluded_prefixes)
+    return file_name.strip().lower().startswith("re_")
 
 
 # Odstranění citovaného původního textu pod oddělovačem.
@@ -115,7 +104,7 @@ def extract_sender(message: extract_msg.Message) -> str:
 
 def process_msg_file(path: Path) -> dict[str, str]:
     last_error: Exception | None = None
-    for encoding in (None, "cp1250"):
+    for encoding in ENCODING_FALLBACKS:
         kwargs = {}
         if encoding:
             kwargs["overrideEncoding"] = encoding
@@ -170,7 +159,7 @@ def main() -> None:
             no_number += 1
         rows.append(row)
 
-    rows.sort(key=lambda row: (row["den_mesic"] or "99.99", row["odpovedel"].lower()))
+    rows.sort(key=lambda row: (row["den_mesic"] or MISSING_DATE_SORT_KEY, row["odpovedel"].lower()))
 
     with output.open("w", encoding="utf-8-sig", newline="") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=["odpovedel", "den_mesic", "hodnota"])
