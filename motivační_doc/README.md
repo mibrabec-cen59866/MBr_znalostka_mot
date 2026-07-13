@@ -1,0 +1,1 @@
+# motivační_doc
