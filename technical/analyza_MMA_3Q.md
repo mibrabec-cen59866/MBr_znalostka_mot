@@ -30,7 +30,7 @@
 | segmentovy_dokument_mma_2026_3q.pdf | k dispozici |
 | metodika_zapocitavani_mma_2026_3q.xlsx | k dispozici |
 | karta_motivace_mma_3q2026.pdf | k dispozici |
-| provizní list_mma_3q2026.pdf | k dispozici |
+| provizni_list_mma_3q2026.pdf | k dispozici |
 | **product_tree.xml** | **k dispozici** (103 produktů, 10 plánovaných skupin + OTHER) |
 | **positions.xml** | **k dispozici** (114 pozic, z toho 15 v segmentu MMA) |
 
@@ -70,7 +70,7 @@ Plánované skupiny (`OKOM_SOURCE_ID` = O objem / K kus) a nomenklatura:
 | segmentovy_dokument_mma_2026_3q.pdf | Segmentový dokument | MMA (str. 2) | 3Q 2026 (titulní strana) | 18 stran, obsahuje i karty motivace |
 | metodika_zapocitavani_mma_2026_3q.xlsx | Metodika započítávání | dle názvu souboru | dle názvu souboru | 1 list „metodika“, 28 řádků |
 | karta_motivace_mma_3q2026.pdf | Karta motivace | dle názvu (uvnitř „MMA“ jen v kódu MMMA) | 3Q2026 (záhlaví stran) | 8 pozic |
-| provizní list_mma_3q2026.pdf | Provizní list | dle názvu souboru | dle názvu souboru | 1 strana, matice provizí |
+| provizni_list_mma_3q2026.pdf | Provizní list | dle názvu souboru | dle názvu souboru | 1 strana, matice provizí |
 
 ---
 
