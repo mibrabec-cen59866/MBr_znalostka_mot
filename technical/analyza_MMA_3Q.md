@@ -1,7 +1,9 @@
 # Analýza motivační dokumentace bonusů – segment MMA, 3Q 2026
 
-> Verze: **v4** (2026-07-15)
+> Verze: **v5** (2026-07-15)
 > Rozsah: segment **MMA**, období **3Q 2026**. Analýza pouze popisuje; neupravuje dokumenty ani nenavrhuje opravy.
+>
+> **Změny ve v5 (odpovědi zadavatele):** uzavřeny **O3** (provize se počítá **lineárně i pro neúplné násobky báze** – např. objem 150 000 při bázi 100 000 → 1,5× sazba), **O8** (storno se odečítá **v kvartálu, kdy ke stornu došlo**; plnění tak může být i **záporné**; odečet u skupiny pod 80 % plánu nastává cca 1× za 2 roky, zadavatel **řeší ručně** – teď neřešíme), **O9** (rekonstrukce poboček / Area lead / FLE/FLET → **není třeba řešit** → N8 uzavřeno), **O11** (autoritativní zdroj paušálů za bod = **závazně karta motivace**), **O13** (mapování pozic – viz níže → N10 a N12 uzavřeny, N11 a N13 upřesněny). **O2** označena jako **neřešíme** (pro nápočet v tomto rozsahu nepodstatná; N6 ponecháno evidenčně). Otevřené / čekající na doplnění: **O7**.
 >
 > **Změny ve v4 (odpovědi zadavatele):** uzavřeny **O4** (11. skupina OTHER/Ostatní nemá plán → do zlatého pásma se počítá jen 10 plánovaných skupin), **O5** (skok koeficientu 0,9→1,1 je záměr, není chyba → N7 uzavřeno), **O6** (50 % se odečítá ze **všeho** – z provize i ze započteného kusu/objemu; do plnění plánu jde jen polovina), **O14** (potvrzeno LOANS = „Nezajištěné úvěry“, HYPO = „Zajištěné úvěry“ → N4 uzavřeno). **O10** = zatím ano (žádné další dodatky), potvrdí se na vyžádání. **O7** evidována, zadavatel dovysvětlí později. Otevřené a čekající na doplnění zadavatelem: **O2, O3, O8, O9, O11, O13** (v analýze upřesněno, na co přesně se ptáme).
 >
@@ -30,6 +32,14 @@
 9. **Půlení obchodů (asistence / přesměrování / dělené příležitosti):** 50 % se odečítá **ze všeho** – z **provize** i ze **započteného kusu / započteného objemu**. Do plnění plánu tak jde jen polovina obchodu (O6).
 10. **Koeficient plnění – skok 0,9 (90–99 %) → 1,1 (100–109 %) bez hodnoty 1,0 je záměr**, nikoli chyba (O5).
 11. **Nomenklatura úvěrových skupin:** **LOANS = „Nezajištěné úvěry“**, **HYPO = „Zajištěné úvěry“** (O14).
+12. **Nápočet provize je lineární** i pro neúplné násobky báze: provize = (objem / báze) × sazba, tj. objem 150 000 Kč při bázi 100 000 Kč → 1,5× sazba (O3).
+13. **Storna:** odečet se provádí **v kvartálu, kdy ke stornu došlo** (ne v kvartálu sjednání). Plnění tak může být i **záporné**. Odečet u skupiny pod 80 % plánu je vzácný (cca 1× za 2 roky) a zadavatel jej **řeší ručně** – v nápočtu ho teď neřešíme (O8).
+14. **Paušály za bod:** autoritativním zdrojem je **závazně karta motivace** (OBA 1 800, OBAS 2 200 …) – ne nominační listy / rozpis (O11).
+15. **Mapování pozic pro nápočet (O13):**
+    - **Manažeři:** platný je **kód z `positions.xml`** (tj. MMMT + MMM1/MMM2/MMM3), nikoli MMMA ze segmentového dokumentu.
+    - **FLE/FLET:** pro nápočet **úplně ignorovat**.
+    - **Servis:** brát **BKPJ = CAS = „Pokladník“** jako jednu pozici a **BKPM = OBAK = „OBAH“** jako jednu pozici.
+    - **Bankéři:** rozdíly v kódech (OBAJ/OBAM/OBAP/OBAMa) zatím **ignorovat**.
 
 ## STAV VSTUPNÍCH PODKLADŮ
 
@@ -130,29 +140,24 @@ Rámcový předpis č. **6202 10 01R**, účinnost **01.07.2025**, verze „Aktu
 |---|---|---|---|---|---|---|
 | N3 | Definiční | Segment. dok. ↔ Karta ↔ Nadřazený předpis | 4. kritérium OBAH: „Digitalizace“ (tab.) vs. „Servicing“ (text/karta). **Nadřazený předpis 6202_10_01R uvádí jako standardní kritérium „Digitalizace“ (kap. 1.1/4.6); „Servicing“ v něm nefiguruje** → název „Servicing“ v kartě/segmentu je nekonzistentní s nadřazeným předpisem. | seg. str. 3 vs. str. 8 / karta OBAH; 6202_10_01R kap. 1.1, 4.6 | střední | otevřené (O7) |
 | N4 | Definiční (nomenklatura) | product_tree/provizní list/metodika ↔ segment. dok./karty | Oficiální názvy skupin jsou **„Úvěry“ (LOANS)** a **„Bydlení“ (HYPO)**, ale plánové tabulky v segm. dok. a kartách používají **„Nezajištěné úvěry“** a **„Zajištěné úvěry“**. **Zadavatel potvrdil mapování: LOANS = „Nezajištěné úvěry“, HYPO = „Zajištěné úvěry“ (O14).** Jde tedy jen o rozdílné labely téhož, ne o věcný rozpor. | product_tree; provizní list; metodika; seg. str. 4 | nízká | **uzavřeno (O14)** |
-| N6 | Chybějící info | Provizní list ↔ ostatní | Sazba „s pojištěním“ vs. „bez“ (120/180) – podmínka uplatnění nikde nepopsána | provizní list, blok Úvěry/Bydlení | střední | otevřené (O2) |
+| N6 | Chybějící info | Provizní list ↔ ostatní | Sazba „s pojištěním“ vs. „bez“ (120/180) – podmínka uplatnění nikde nepopsána | provizní list, blok Úvěry/Bydlení | střední | neřešíme – dle zadavatele pro tento rozsah nepodstatné (O2) |
 | N7 | Logická | Segment. dok. + karty | Skok koeficientu 0,9 (90–99 %) → 1,1 (100–109 %); chybí 1,0. **Zadavatel potvrdil, že jde o záměr (motivace „skočit“ přes 100 %), nikoli chybu (O5).** | seg. str. 4; karty | nízká | **uzavřeno – dle zadání záměr (O5)** |
-| N8 | Úplnost | Segment. dok. | Rekonstrukce poboček neuvádí Area lead ani FLE/FLET | seg. str. 9 | nízká | otevřené (O9) |
+| N8 | Úplnost | Segment. dok. | Rekonstrukce poboček neuvádí Area lead ani FLE/FLET | seg. str. 9 | nízká | **uzavřeno – dle zadavatele netřeba řešit (O9)** |
 | N9 | Definiční (drobné) | Provizní list ↔ Metodika | Odlišné názvy/seskupení: Mobilita vs. Kodex mobility; Živ. poj. dvě sazby vs. jeden řádek | provizní list vs. metodika | nízká | otevřené |
-| N10 | Pokrytí segmentu | positions.xml ↔ segment. dok./karty | **FLE/FLET nejsou v positions.xml** (v žádném segmentu), přestože segmentový dokument i karty popisují pozice Future LAB expert (FLE) a FLET pro MMA. | positions.xml (MMA); seg. str. 15, karta str. 7–8 | vysoká | nové |
-| N11 | Definiční / pokrytí | positions.xml ↔ segment. dok. (kap. 1) ↔ nadřazený předpis | **Kolize kódů manažerských pozic.** Seg. dok.: MMMT = team lead, **MMMA = area lead**. positions.xml pro MMA má MMMT (mot=Manažer_MMA) + navíc **MMM1** (retail team lead), **MMM2** (retail area lead), **MMM3** (retail regional lead); **kód MMMA neexistuje**. **Chybějící karta pro „Regional lead“ je vysvětlena: nadřazený předpis 6202_10_01R se bonusem pozice *retail regional lead* výslovně nezabývá (kap. 1).** Kolize MMMA vs. MMM1/2/3 však zůstává otevřená. | positions.xml; seg. str. 1, str. 17; 6202_10_01R kap. 1 | vysoká | částečně vyřešeno (regional lead); kolize kódů otevřená |
-| N12 | Definiční | positions.xml ↔ segment. dok. (kap. 1) | **Servisní pozice nekonzistentní.** Seg. dok.: BKPJ = „Pokladník“, BKPM = „OBAH“. positions.xml má navíc **CAS** (Pokladník) a **OBAK** (Bankéř klientské péče, mot=OBAH), přičemž řádky **BKPJ i BKPM mají v popisu shodně „OBAH“**. Nejednoznačné, který kód je platný. | positions.xml; seg. str. 1 | střední | nové |
-| N13 | Definiční | positions.xml ↔ segment. dok. (kap. 1) | Motivační kódy nesouhlasí se seskupením v seg. dok. Seg. dok.: OBAJ/OBAM = „OBA“, OBAS/OBAMa = „OBAS“. positions.xml: OBAJ (mot=OBAJ), OBAM (mot=OBAM) – **negrupováno**; navíc **OBAP** (Osobní bankéř Plus) neuvedený v seg. dok., a **OBAMa (master)** ze seg. dok. v positions.xml chybí. | positions.xml; seg. str. 1 | střední | nové |
+| N10 | Pokrytí segmentu | positions.xml ↔ segment. dok./karty | **FLE/FLET nejsou v positions.xml** (v žádném segmentu), přestože segmentový dokument i karty popisují pozice Future LAB expert (FLE) a FLET pro MMA. **Zadavatel: FLE/FLET se pro nápočet úplně ignorují (O13)** → pro naši analýzu bezpředmětné. | positions.xml (MMA); seg. str. 15, karta str. 7–8 | vysoká | **uzavřeno – FLE/FLET ignorovat (O13)** |
+| N11 | Definiční / pokrytí | positions.xml ↔ segment. dok. (kap. 1) ↔ nadřazený předpis | **Kolize kódů manažerských pozic.** Seg. dok.: MMMT = team lead, **MMMA = area lead**. positions.xml pro MMA má MMMT (mot=Manažer_MMA) + navíc **MMM1** (retail team lead), **MMM2** (retail area lead), **MMM3** (retail regional lead); **kód MMMA neexistuje**. **Chybějící karta pro „Regional lead“ je vysvětlena: nadřazený předpis 6202_10_01R se bonusem pozice *retail regional lead* výslovně nezabývá (kap. 1). Zadavatel: manažeři se řídí kódem z `positions.xml` (MMMT + MMM1/2/3), MMMA se nepoužívá (O13).** | positions.xml; seg. str. 1, str. 17; 6202_10_01R kap. 1 | vysoká | **uzavřeno – platí kódy z positions.xml (O13)** |
+| N12 | Definiční | positions.xml ↔ segment. dok. (kap. 1) | **Servisní pozice nekonzistentní.** Seg. dok.: BKPJ = „Pokladník“, BKPM = „OBAH“. positions.xml má navíc **CAS** (Pokladník) a **OBAK** (Bankéř klientské péče, mot=OBAH), přičemž řádky **BKPJ i BKPM mají v popisu shodně „OBAH“**. **Zadavatel: pro analýzu brát BKPJ = CAS = „Pokladník“ jako jednu pozici a BKPM = OBAK = „OBAH“ jako jednu pozici (O13).** | positions.xml; seg. str. 1 | střední | **uzavřeno – sloučení pozic dle O13** |
+| N13 | Definiční | positions.xml ↔ segment. dok. (kap. 1) | Motivační kódy nesouhlasí se seskupením v seg. dok. Seg. dok.: OBAJ/OBAM = „OBA“, OBAS/OBAMa = „OBAS“. positions.xml: OBAJ (mot=OBAJ), OBAM (mot=OBAM) – **negrupováno**; navíc **OBAP** (Osobní bankéř Plus) neuvedený v seg. dok., a **OBAMa (master)** ze seg. dok. v positions.xml chybí. **Zadavatel: rozdíly u bankéřů zatím ignorovat (O13).** | positions.xml; seg. str. 1 | střední | odloženo – dle zadavatele zatím ignorovat (O13) |
 
 ---
 
 ## 4. Otevřené otázky (register – opakuje se, dokud nezavřeme)
 
-**Uzavřené:** segment/období z názvu · Mass Affluent = Mass Market · sjednaný vs. započtený objem · reference data (odloženo) · **O1 mapování produkt→skupina→jednotka (product_tree.xml)** · product_tree.xml (dodán) · pilot „Úvěry“ (skončil → ignorovat) · **6202_10_01R (nadřazený předpis dodán)** · **O4 (11. skupina OTHER nemá plán – zlaté pásmo počítá jen 10 plánovaných skupin)** · **O5 (skok koeficientu 0,9→1,1 je záměr, ne chyba → N7)** · **O6 (50 % se odečítá ze všeho – provize i započtený kus/objem; do plnění plánu jde jen polovina)** · **O10 (zatím finální, žádné dodatky – potvrdí se na vyžádání)** · **O14 (LOANS=„Nezajištěné úvěry“, HYPO=„Zajištěné úvěry“ → N4)**.
+**Uzavřené:** segment/období z názvu · Mass Affluent = Mass Market · sjednaný vs. započtený objem · reference data (odloženo) · **O1 mapování produkt→skupina→jednotka (product_tree.xml)** · product_tree.xml (dodán) · pilot „Úvěry“ (skončil → ignorovat) · **6202_10_01R (nadřazený předpis dodán)** · **O4 (11. skupina OTHER nemá plán – zlaté pásmo počítá jen 10 plánovaných skupin)** · **O5 (skok koeficientu 0,9→1,1 je záměr, ne chyba → N7)** · **O6 (50 % se odečítá ze všeho – provize i započtený kus/objem; do plnění plánu jde jen polovina)** · **O10 (zatím finální, žádné dodatky – potvrdí se na vyžádání)** · **O14 (LOANS=„Nezajištěné úvěry“, HYPO=„Zajištěné úvěry“ → N4)** · **O3 (provize lineárně i pro neúplné násobky báze)** · **O8 (storno se odečítá v Q storna; plnění může být záporné; skupina pod 80 % ~1× za 2 roky → řeší se ručně)** · **O9 (rekonstrukce/Area lead/FLE/FLET → netřeba řešit → N8)** · **O11 (paušály za bod závazně z karty motivace)** · **O13 (mapování pozic: manažeři dle positions.xml; FLE/FLET ignorovat; servis BKPJ=CAS=Pokladník a BKPM=OBAK=OBAH; bankéři zatím ignorovat → N10/N12)**.
+**Neřešíme (dle zadavatele nepodstatné):** **O2 (podmínka sazby „s pojištěním“ vs. „bez“) – N6 ponecháno evidenčně.**
 
 **Legenda stavů:** ⏳ *čeká na dovysvětlení zadavatelem* · 🅴 *evidováno, zadavatel doplní později*.
 
 | ID | Otázka | Proč | Stav |
 |---|---|---|---|
-| O2 | Podmínka pro sazbu „s pojištěním“ vs. „bez“ (Úvěry 120/180, Bydlení 40/60) – co rozhoduje, která sazba se u obchodu použije | výpočet provize | ⏳ čeká na dovysvětlení |
-| O3 | Vzorec provize = (objem / báze) × sazba – počítá se **lineárně i u neúplných násobků báze** (např. objem 150 000 při bázi 100 000 → 1,5× sazba), nebo jen celé násobky? | vzorec | ⏳ čeká na dovysvětlení |
 | O7 | „Digitalizace“ vs. „Servicing“ (OBAH) – závazný název 4. kritéria (nadř. předpis uvádí „Digitalizace“) | definiční (N3) | 🅴 evidováno, zadavatel doplní později |
-| O8 | Storna: jak se řeší **storno obchodu přes hranici čtvrtletí** (odečet v Q sjednání, nebo v Q storna?) a jak funguje odečet u skupiny, která je pod 80 % plánu | nápočet 3Q | ⏳ čeká na dovysvětlení |
-| O9 | Rekonstrukce poboček (seg. str. 9) – mají po dobu rekonstrukce nárok na bonus i **Area lead** a **FLE/FLET**? Dokument je nezmiňuje | úplnost (N8) | ⏳ čeká na dovysvětlení |
-| O11 | Autoritativní zdroj **paušálů za bod** (OBA 1 800, OBAS 2 200 …) – platí hodnoty z karty motivace, nebo z nominačních listů / rozpisu? | hodnoty | ⏳ čeká na dovysvětlení |
-| O13 | Platné kódy pozic MMA: MMMA vs. MMM1/2/3; existence FLE/FLET; CAS/OBAK vs. BKPJ/BKPM; OBAP/OBAMa (viz N10–N13) | mapování pozic pro nápočet | ⏳ čeká na dovysvětlení |
