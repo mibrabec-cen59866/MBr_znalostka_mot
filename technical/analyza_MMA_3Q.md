@@ -1,7 +1,9 @@
 # Analýza motivační dokumentace bonusů – segment MMA, 3Q 2026
 
-> Verze: **v2** (2026-07-14)
+> Verze: **v3** (2026-07-15)
 > Rozsah: segment **MMA**, období **3Q 2026**. Analýza pouze popisuje; neupravuje dokumenty ani nenavrhuje opravy.
+>
+> **Změny ve v3:** doplněn nadřazený předpis **`6202_10_01R.pdf` – „Bonusy pobočkové sítě a externího prodeje“** (účinnost 01.07.2025; skenované PDF – čteno přes OCR). Doplněno shrnutí (sekce 2.7); aktualizovány nesrovnalosti N3 (nomenklatura kritéria „Digitalizace“) a N11 (bonus pozice *retail regional lead* není tímto předpisem řešen → vysvětluje chybějící kartu); potvrzeny hodnoty příslibu 20 %/15 % a výplatní pravidla; upřesněny otevřené otázky O7, O11.
 >
 > **Změny ve v2:** doplněny podklady `product_tree.xml` a `positions.xml`; vyřešeno mapování produkt→skupina→jednotka (O1) a potvrzeny jednotky; přidány nové nesrovnalosti z `positions.xml`; pilot „Úvěry“ dle zadavatele skončil → ignorováno; doplněny odkazy (6202_10_01R, Salesforce Q&A).
 
@@ -33,6 +35,7 @@
 | provizni_list_mma_3q2026.pdf | k dispozici |
 | **product_tree.xml** | **k dispozici** (103 produktů, 10 plánovaných skupin + OTHER) |
 | **positions.xml** | **k dispozici** (114 pozic, z toho 15 v segmentu MMA) |
+| **6202_10_01R.pdf** (nadřazený předpis „Bonusy pobočkové sítě a externího prodeje“) | **k dispozici** (6 stran, skenované PDF čteno přes OCR; účinnost 01.07.2025, verze „Aktuální“) |
 
 > Pozn.: zadavatel avizoval, že může dorazit další dokumentace; pracuje se s aktuálně dostupnými podklady.
 
@@ -71,6 +74,7 @@ Plánované skupiny (`OKOM_SOURCE_ID` = O objem / K kus) a nomenklatura:
 | metodika_zapocitavani_mma_2026_3q.xlsx | Metodika započítávání | dle názvu souboru | dle názvu souboru | 1 list „metodika“, 28 řádků |
 | karta_motivace_mma_3q2026.pdf | Karta motivace | dle názvu (uvnitř „MMA“ jen v kódu MMMA) | 3Q2026 (záhlaví stran) | 8 pozic |
 | provizni_list_mma_3q2026.pdf | Provizní list | dle názvu souboru | dle názvu souboru | 1 strana, matice provizí |
+| 6202_10_01R.pdf | **Nadřazený předpis** (bonusy pobočkové sítě a ext. prodeje) | napříč segmenty | účinnost od 01.07.2025 | 6 stran, skenované (OCR); rámcová pravidla, detaily odkazuje do segm. dokumentů |
 
 ---
 
@@ -94,20 +98,38 @@ Plánované skupiny (`OKOM_SOURCE_ID` = O objem / K kus) a nomenklatura:
 ### 2.6 positions.xml (číselník pozic)
 114 pozic napříč segmenty (EPB 11, HC 11, IS 5, KC 46, MMA 15, MSE 7, PS 6, TA 13). Segment **MMA má 15 pozic** (SALES/SERVICE/MNGR) s kódem, popisem, motivačním kódem. Použije se k ověření mapování pozic z kap. 1 segmentového dokumentu. Zjištěné nesrovnalosti viz N10–N13.
 
+### 2.7 6202_10_01R – Bonusy pobočkové sítě a externího prodeje (nadřazený předpis)
+Rámcový předpis č. **6202 10 01R**, účinnost **01.07.2025**, verze „Aktuální“ (poslední změna 1. 7. 2025), autor Irena Melounová. Skenované PDF (6 stran), text získán přes OCR. Definuje společná pravidla bonusů pro pobočkovou síť a vybrané pozice externího prodeje; **detaily jednotlivých kritérií i segmentů odkazuje do segmentových dokumentů**.
+
+**Klíčová pravidla / hodnoty:**
+- **Rozsah:** týká se zaměstnanců OM a vybraných pozic externího prodeje. **Nezabývá se základními mzdami a bonusem pozice *retail regional lead*.** Do motivace za prodej jdou pouze produkty, u nichž lze identifikovat zaměstnance, který obchod sjednal (výjimka: digitální obchody na zařízení klienta bez asistence).
+- **Bonusová kritéria (kap. 1.1):** Prodej/Poradenský prodej · Portfolio · Kvalita · Mimořádný bonus · Klientská spokojenost · **Digitalizace** · Akvizice · Finanční zdraví. Některá platí jen pro některé segmenty; složky bonusu jsou navzájem nezávislé.
+- **Výplata:** čtvrtletně nebo pololetně dle typu pozice, se mzdou za měsíc následující po hodnoceném období → výplatní měsíce **leden, duben, červenec, říjen** (EPB o dva měsíce později). Bonus se vyplácí, je-li **≥ 100 Kč**. Bonus je nenárokovou složkou mzdy.
+- **Krácení (kap. 1.2):** nekorektní jednání, neabsolvované povinné kurzy v AMOS, střet zájmů (produkt pro osoby blízké / pro sebe se nezapočítává). Kontrolní útvary 6610, 6620, 6940, 6950, 5030 01.
+- **Rozpis plánů (kap. 2):** obchodní plány stanovuje útvar 5030 (tým 5030 03); rozpis na jednotlivce přes aplikaci; **Nominační listy** jsou klíčovým zdrojem dat pro výpočet bonusu (rozpis provádí manažer org. jednotky).
+- **Příslib (kap. 4):** celkový roční příslib **20 %** roční základní mzdy u manažerských a prodejních pozic, **15 %** u podpůrných pozic (neplatí pro EPB a pozice externí prodejní sítě). Přísliby vycházejí z % váhy kritéria, u některých pozic pevnou částkou; **detaily v segmentových dokumentech**.
+- **Zohlednění doby na pozici (kap. 4.9):** poměrné krácení při částečném úvazku, pracovní neschopnosti, nástupu/odchodu, přechodu mezi segmenty apod.
+- **Odkazy/definice:** související předpis **6202.00.01R Mzdový řád**; definice EPB, OM (obchodní místo), ČS.
+
+**Ověřené shody (pozitivní zjištění):**
+- Roční příslib **20 % (prodej/manažeři) / 15 % (podpora)** sedí se segmentovým dokumentem (OBA/OBAS/…_pov/FLE 20 %; OBAH/Pokladník 15 %).
+- Výplata čtvrtletně a **minimální hranice 100 Kč** sedí se segmentovým dokumentem.
+- Kritérium se v nadřazeném předpisu jmenuje **„Digitalizace“** (kap. 1.1 a 4.6); pojem **„Servicing“ zde vůbec nefiguruje** (souvisí s N3/O7).
+
 ---
 
 ## 3. Report nesrovnalostí (aktivní)
 
 | Č. | Typ | Dotčené dokumenty | Popis | Místo | Závažnost | Stav |
 |---|---|---|---|---|---|---|
-| N3 | Definiční | Segment. dok. ↔ Karta | 4. kritérium OBAH: „Digitalizace“ (tab.) vs. „Servicing“ (text/karta) | seg. str. 3 vs. str. 8 / karta OBAH | střední | otevřené (O7) |
+| N3 | Definiční | Segment. dok. ↔ Karta ↔ Nadřazený předpis | 4. kritérium OBAH: „Digitalizace“ (tab.) vs. „Servicing“ (text/karta). **Nadřazený předpis 6202_10_01R uvádí jako standardní kritérium „Digitalizace“ (kap. 1.1/4.6); „Servicing“ v něm nefiguruje** → název „Servicing“ v kartě/segmentu je nekonzistentní s nadřazeným předpisem. | seg. str. 3 vs. str. 8 / karta OBAH; 6202_10_01R kap. 1.1, 4.6 | střední | otevřené (O7) |
 | N4 | Definiční (nomenklatura) | product_tree/provizní list/metodika ↔ segment. dok./karty | Oficiální názvy skupin jsou **„Úvěry“ (LOANS)** a **„Bydlení“ (HYPO)**, ale plánové tabulky v segm. dok. a kartách používají **„Nezajištěné úvěry“** a **„Zajištěné úvěry“**. Mapování je vydedukovatelné, ale názvy nejsou sjednocené. | product_tree; provizní list; metodika; seg. str. 4 | střední | popsáno; potvrdit (O14) |
 | N6 | Chybějící info | Provizní list ↔ ostatní | Sazba „s pojištěním“ vs. „bez“ (120/180) – podmínka uplatnění nikde nepopsána | provizní list, blok Úvěry/Bydlení | střední | otevřené (O2) |
 | N7 | Logická | Segment. dok. + karty | Skok koeficientu 0,9 (90–99 %) → 1,1 (100–109 %); chybí 1,0 | seg. str. 4; karty | nízká | otevřené (O5) |
 | N8 | Úplnost | Segment. dok. | Rekonstrukce poboček neuvádí Area lead ani FLE/FLET | seg. str. 9 | nízká | otevřené (O9) |
 | N9 | Definiční (drobné) | Provizní list ↔ Metodika | Odlišné názvy/seskupení: Mobilita vs. Kodex mobility; Živ. poj. dvě sazby vs. jeden řádek | provizní list vs. metodika | nízká | otevřené |
 | N10 | Pokrytí segmentu | positions.xml ↔ segment. dok./karty | **FLE/FLET nejsou v positions.xml** (v žádném segmentu), přestože segmentový dokument i karty popisují pozice Future LAB expert (FLE) a FLET pro MMA. | positions.xml (MMA); seg. str. 15, karta str. 7–8 | vysoká | nové |
-| N11 | Definiční / pokrytí | positions.xml ↔ segment. dok. (kap. 1) | **Kolize kódů manažerských pozic.** Seg. dok.: MMMT = team lead, **MMMA = area lead**. positions.xml pro MMA má MMMT (mot=Manažer_MMA) + navíc **MMM1** (retail team lead), **MMM2** (retail area lead), **MMM3** (retail regional lead); **kód MMMA neexistuje**. Karta pro „Regional lead“ chybí, ač se v seg. dok. zmiňuje. | positions.xml; seg. str. 1, str. 17 | vysoká | nové |
+| N11 | Definiční / pokrytí | positions.xml ↔ segment. dok. (kap. 1) ↔ nadřazený předpis | **Kolize kódů manažerských pozic.** Seg. dok.: MMMT = team lead, **MMMA = area lead**. positions.xml pro MMA má MMMT (mot=Manažer_MMA) + navíc **MMM1** (retail team lead), **MMM2** (retail area lead), **MMM3** (retail regional lead); **kód MMMA neexistuje**. **Chybějící karta pro „Regional lead“ je vysvětlena: nadřazený předpis 6202_10_01R se bonusem pozice *retail regional lead* výslovně nezabývá (kap. 1).** Kolize MMMA vs. MMM1/2/3 však zůstává otevřená. | positions.xml; seg. str. 1, str. 17; 6202_10_01R kap. 1 | vysoká | částečně vyřešeno (regional lead); kolize kódů otevřená |
 | N12 | Definiční | positions.xml ↔ segment. dok. (kap. 1) | **Servisní pozice nekonzistentní.** Seg. dok.: BKPJ = „Pokladník“, BKPM = „OBAH“. positions.xml má navíc **CAS** (Pokladník) a **OBAK** (Bankéř klientské péče, mot=OBAH), přičemž řádky **BKPJ i BKPM mají v popisu shodně „OBAH“**. Nejednoznačné, který kód je platný. | positions.xml; seg. str. 1 | střední | nové |
 | N13 | Definiční | positions.xml ↔ segment. dok. (kap. 1) | Motivační kódy nesouhlasí se seskupením v seg. dok. Seg. dok.: OBAJ/OBAM = „OBA“, OBAS/OBAMa = „OBAS“. positions.xml: OBAJ (mot=OBAJ), OBAM (mot=OBAM) – **negrupováno**; navíc **OBAP** (Osobní bankéř Plus) neuvedený v seg. dok., a **OBAMa (master)** ze seg. dok. v positions.xml chybí. | positions.xml; seg. str. 1 | střední | nové |
 
@@ -115,7 +137,7 @@ Plánované skupiny (`OKOM_SOURCE_ID` = O objem / K kus) a nomenklatura:
 
 ## 4. Otevřené otázky (register – opakuje se, dokud nezavřeme)
 
-**Uzavřené:** segment/období z názvu · Mass Affluent = Mass Market · sjednaný vs. započtený objem · reference data (odloženo) · **O1 mapování produkt→skupina→jednotka (vyřešeno přes product_tree.xml)** · product_tree.xml (dodán) · pilot „Úvěry“ (skončil → ignorovat).
+**Uzavřené:** segment/období z názvu · Mass Affluent = Mass Market · sjednaný vs. započtený objem · reference data (odloženo) · **O1 mapování produkt→skupina→jednotka (vyřešeno přes product_tree.xml)** · product_tree.xml (dodán) · pilot „Úvěry“ (skončil → ignorovat) · **6202_10_01R (nadřazený předpis dodán – potvrzena výplatní pravidla, min. 100 Kč a příslib 20 %/15 %).**
 
 | ID | Otázka | Proč | Stav |
 |---|---|---|---|
@@ -124,10 +146,10 @@ Plánované skupiny (`OKOM_SOURCE_ID` = O objem / K kus) a nomenklatura:
 | O4 | Zlaté pásmo: 8 z 10 skupin; jak se počítají skupiny bez plánu / s nulovým plánem | koef. 1,2 | otevřené |
 | O5 | Hranice pásem (≥100 %→1,1?), absence 1,0, zaokrouhlení před zařazením | koeficient | otevřené |
 | O6 | Půlení obchodů 50 % – z provize, nebo z objemu/ks (a dopad na plán) | výpočet + plán | otevřené |
-| O7 | „Digitalizace“ vs. „Servicing“ (OBAH) – závazný název kritéria | definiční | otevřené |
+| O7 | „Digitalizace“ vs. „Servicing“ (OBAH) – závazný název kritéria. **Nadřazený předpis 6202_10_01R používá „Digitalizace“ (kap. 1.1/4.6); „Servicing“ neuvádí** – potvrdit, zda je „Servicing“ jen lokální label OBAH, nebo skutečně jiné kritérium. | definiční | upřesněno (viz N3), potvrdit |
 | O8 | Storna přes čtvrtletí; odečet u skupiny pod 80 % plánu | nápočet 3Q | otevřené |
 | O9 | Rekonstrukce poboček – mají nárok Area lead a FLE/FLET? | úplnost | otevřené |
 | O10 | Jsou tyto soubory finální verze bez dodatků? | platnost | otevřené |
-| O11 | Autoritativní zdroj paušálů za bod (karta vs. nominační listy/rozpis) | hodnoty | otevřené |
-| O13 | Platné kódy pozic MMA: MMMA vs. MMM1/2/3; existence FLE/FLET; CAS/OBAK vs. BKPJ/BKPM; OBAP/OBAMa | mapování pozic pro nápočet | nové (N10–N13) |
+| O11 | Autoritativní zdroj paušálů za bod (karta vs. nominační listy/rozpis). **Nadřazený předpis: přísliby z % váhy kritéria, u některých pozic pevnou částkou; „Nominační listy“ = klíčový zdroj dat pro výpočet** – ale konkrétní paušály za bod zůstávají v kartě/segmentu. | hodnoty | upřesněno, částečně |
+| O13 | Platné kódy pozic MMA: MMMA vs. MMM1/2/3; existence FLE/FLET; CAS/OBAK vs. BKPJ/BKPM; OBAP/OBAMa. **Dílčí posun: bonus *retail regional lead* není v 6202_10_01R řešen (vysvětluje chybějící kartu).** | mapování pozic pro nápočet | nové (N10–N13), částečně |
 | O14 | Potvrdit nomenklaturu skupin úvěrů: LOANS=„Nezajištěné úvěry“, HYPO=„Zajištěné úvěry“ | konzistence plánu | nové (N4) |
