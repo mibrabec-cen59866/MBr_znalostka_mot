@@ -13,7 +13,7 @@ zaznamenej to jako nesrovnalost.
 Veškerý výstup piš **česky**.
 
 ## Vstupní soubory
-Soubory se nacházejí ve složce `motivacni_dokumenty/` tohoto repozitáře.
+Soubory se nacházejí ve složce `motivacni_dokumenty/MMA/` tohoto repozitáře.
 Doplňkové číselníky (`positions.xml`, `product_tree.xml`) jsou ve složce `ciselniky/`.
 Formát: **PDF** nebo **Excel**. Ve všech prodejních segmentech mají soubory stejnou strukturu.
 

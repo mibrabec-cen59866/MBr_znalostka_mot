@@ -1,7 +1,9 @@
 # Analýza motivační dokumentace bonusů – segment MMA, 3Q 2026
 
-> Verze: **v5** (2026-07-15)
+> Verze: **v6** (2026-07-15)
 > Rozsah: segment **MMA**, období **3Q 2026**. Analýza pouze popisuje; neupravuje dokumenty ani nenavrhuje opravy.
+>
+> **Změny ve v6 (BA review):** doplněna sekce **5. BA review** – pohled byznys analytika na celou dokumentaci bonusů MMA (co nedává smysl / co si protiřečí / co lze zjednodušit). Do registru otevřených otázek přidáno **5 nových otázek k doptání**: **NOVÁ-1** (chování koeficientu při záporném plnění / storno pod 0 %), **NOVÁ-2** (aplikace zlatého pásma ×1,2 vs. základní koeficient – pořadí a agregát), **NOVÁ-3** (cliff na hranici 80 %: 0,0→0,8 – je to záměr?), **NOVÁ-4** (digi bonus 45 ks – práh vs. násobky, ≥45 vs. přesně 45), **NOVÁ-5** (manažerský přepočet 1/10 příslibu + FZ body → %). Nesrovnalosti a uzavřené otázky beze změny (nic se nemaže, jen se doplňuje).
 >
 > **Změny ve v5 (odpovědi zadavatele):** uzavřeny **O3** (provize se počítá **lineárně i pro neúplné násobky báze** – např. objem 150 000 při bázi 100 000 → 1,5× sazba), **O8** (storno se odečítá **v kvartálu, kdy ke stornu došlo**; plnění tak může být i **záporné**; odečet u skupiny pod 80 % plánu nastává cca 1× za 2 roky, zadavatel **řeší ručně** – teď neřešíme), **O9** (rekonstrukce poboček / Area lead / FLE/FLET → **není třeba řešit** → N8 uzavřeno), **O11** (autoritativní zdroj paušálů za bod = **závazně karta motivace**), **O13** (mapování pozic – viz níže → N10 a N12 uzavřeny, N11 a N13 upřesněny). **O2** označena jako **neřešíme** (pro nápočet v tomto rozsahu nepodstatná; N6 ponecháno evidenčně). Otevřené / čekající na doplnění: **O7**.
 >
@@ -161,3 +163,40 @@ Rámcový předpis č. **6202 10 01R**, účinnost **01.07.2025**, verze „Aktu
 | ID | Otázka | Proč | Stav |
 |---|---|---|---|
 | O7 | „Digitalizace“ vs. „Servicing“ (OBAH) – závazný název 4. kritéria (nadř. předpis uvádí „Digitalizace“) | definiční (N3) | 🅴 evidováno, zadavatel doplní později |
+| NOVÁ-1 | Jak se chová **koeficient plnění při záporném plnění** (storno)? Pásma jsou definována jen od „<80 % → 0,0“ výš; není popsáno chování pod 0 %. Koeficient 0,0 fakticky vynuluje storno penalizaci. | logická (souvisí O8) | ⏳ k doptání |
+| NOVÁ-2 | **Aplikace zlatého pásma ×1,2** vs. základní koeficient (např. 1,1 v pásmu 100–109 %): v jakém pořadí, na jakém agregátu (per skupina vs. celkově) a zda multiplikativně? | logická | ⏳ k doptání |
+| NOVÁ-3 | **Cliff na hranici 80 %** (skok 0,0 → 0,8): je to záměr stejně jako potvrzený skok 0,9→1,1 (O5)? | logická (souvisí N7/O5) | ⏳ k doptání |
+| NOVÁ-4 | **Digi bonus „+45 ks = 800 Kč“**: jednorázový práh, nebo násobky? A hranice „≥45“, nebo „přesně 45“? | definiční | ⏳ k doptání |
+| NOVÁ-5 | **Manažerský přepočet** „1/10 příslibu + převod bodů FZ na %“: přesná mechanika a pořadí kroků. | výpočetní | ⏳ k doptání |
+
+---
+
+## 5. BA review (v6) – pohled byznys analytika
+
+Analytické shrnutí nad celou dokumentací bonusů MMA. Členěno do tří otázek: *co nedává smysl*, *co si protiřečí*, *co lze zjednodušit*. Slouží jako podklad pro doptání zadavatele (viz nové otázky NOVÁ-1 až NOVÁ-5 v sekci 4).
+
+### 5.1 Co nedává smysl (logické / návrhové otazníky)
+
+1. **Záporné plnění vs. koeficientová pásma.** Dle O8 se storno odečítá v kvartálu storna a plnění může být **záporné**. Koeficient plnění je ale definován jen od „<80 % → 0,0“ výš – chybí definice chování v záporném pásmu. Koeficient 0,0 přitom fakticky vynuluje storno penalizaci (do plnění plánu). → **NOVÁ-1**.
+2. **Interakce zlatého pásma se základním koeficientem.** Zlaté pásmo dává ×1,2 a zároveň základní koeficient v pásmu 100–109 % je 1,1. Není jednoznačné pořadí, agregát (per skupina vs. celkově) ani zda se násobí multiplikativně. → **NOVÁ-2**.
+3. **Cliff na hranici 80 %.** Skok 0,0 (<80 %) → 0,8 (80–89 %) je větší útes než potvrzený záměrný skok 0,9→1,1. U hranice 80 % záměr potvrzen není. → **NOVÁ-3**.
+4. **Digi bonus „+45 ks = 800 Kč“.** Není jasné, zda jde o jednorázový práh nebo o násobky, a zda je hranice „≥45“ nebo „přesně 45“. → **NOVÁ-4**.
+5. **FLE/FLET „duchové“.** Segmentový dokument i karta popisují pozice FLE/FLET (váhy 30/70, přesměrování), ale v `positions.xml` neexistují a dle O13 se ignorují. Dokumentace tedy nese pravidla pro pozice, které se reálně nenapočítávají.
+
+### 5.2 Co si protiřečí (rozpory mezi dokumenty)
+
+6. **„Digitalizace“ vs. „Servicing“ (OBAH, 4. kritérium)** – nadřazený předpis zná jen „Digitalizace“, karta/segment „Servicing“. Neuzavřeno (N3 / **O7**).
+7. **Kódy manažerských pozic** – seg. dok. `MMMA` (area lead) vs. `positions.xml` `MMM1/2/3`; `MMMA` neexistuje. Vyřešeno dohodou (O13), ale rozpor v seg. dokumentu zůstává jako dokumentační dluh (N11).
+8. **Servisní pozice** – `BKPJ`/`BKPM` vs. `CAS`/`OBAK`, `BKPJ` i `BKPM` mají v popisu shodně „OBAH“. Vyřešeno sloučením (O13), stále jde o rozpor mezi zdroji (N12).
+9. **Bankéřské kódy** – `OBAJ/OBAM/OBAP/OBAMa`: neseskupené, `OBAP` navíc, `OBAMa` chybí. Dle O13 zatím ignorovat → rozpor odložen, ne vyřešen (N13).
+10. **Nomenklatura skupin** – „Úvěry/Bydlení“ vs. „Nezajištěné/Zajištěné úvěry“. Vyřešeno mapováním (O14), ale trvalý zdroj záměny při čtení.
+11. **Provizní list vs. metodika – drobné** – „Mobilita“ vs. „Kodex mobility“; životní pojištění dvě sazby (list) vs. jeden řádek (metodika). Otevřené (N9).
+
+### 5.3 Co je zbytečně složité a šlo by zjednodušit
+
+12. **Odměna OBAH je mimořádně členitá** – paušál za bod 700 + paušál za prodej 400/skupinu + dvě samostatné třístupňové škály (Podpora; Servicing s prahem 20 operací) + váhy 25/25/25/25. Kandidát na sjednocení mechaniky.
+13. **Různé báze napříč produkty** – objem se počítá jednou /100 000, jindy /1 000. Smíšené báze zvyšují chybovost nápočtu; pomohla by sjednocená báze nebo explicitní tabulka báze na produkt.
+14. **Sazba „s pojištěním“ vs. „bez“ (120/180) bez definice podmínky** (N6 / O2 „neřešíme“) – z pohledu nápočtu reálná díra, vhodné držet evidenčně živé.
+15. **Manažerský přepočet** „1/10 příslibu + převod bodů FZ na %“ – jiná mechanika než u ostatních pozic (body → paušál), vyžaduje samostatný výpočetní blok. → **NOVÁ-5**.
+
+> Pozn.: Sekce 5 pouze popisuje a navrhuje otázky k doptání; **neupravuje** pravidla ani dokumenty (v souladu se zásadami práce).
