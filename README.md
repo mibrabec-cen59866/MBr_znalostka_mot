@@ -2,7 +2,8 @@
 
 ## Struktura repozitáře
 
-- `motivacni_dokumenty/` – zdrojové motivační dokumenty (PDF, Excel).
+- `motivacni_dokumenty/` – zdrojové motivační dokumenty (PDF, Excel), členěné do podsložek dle segmentu.
+  - `motivacni_dokumenty/MMA/` – podklady pro segment MMA.
 - `ciselniky/` – číselníky (`positions.xml`, `product_tree.xml`).
 - `technical/` – technické podklady: analýzy, prompty, extrahované odpovědi a skripty.
 
